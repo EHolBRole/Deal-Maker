@@ -27,7 +27,7 @@ public class EventManager : MonoBehaviour
         DisplayEvent(e);
     }
 
-    void DisplayEvent(EventData e)
+    public void DisplayEvent(EventData e)
     {
         eventPanel.SetActive(true);
         eventTitleText.text = e.eventTitle;

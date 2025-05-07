@@ -3,8 +3,8 @@ using UnityEngine;
 public class TurnManager : MonoBehaviour
 {
     public int currentWeek = 1;
-    public int maxMajorActions = 1;
-    public int maxMinorActions = 1;
+    public int maxMajorActions;
+    public int maxMinorActions;
 
     private int majorActionsUsed = 0;
     private int minorActionsUsed = 0;
@@ -52,5 +52,15 @@ public class TurnManager : MonoBehaviour
         minorActionsUsed = 0;
 
         Debug.Log("Week " + currentWeek + " begins!");
+    }
+
+    public bool CanUseMajorAction()
+    {
+        return majorActionsUsed < maxMajorActions;
+    }
+
+    public bool CanUseMinorAction()
+    {
+        return minorActionsUsed < maxMinorActions;
     }
 }

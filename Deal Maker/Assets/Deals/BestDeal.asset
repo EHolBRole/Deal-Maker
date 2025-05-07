@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b61b7bd7483f954bb9b4d0d425b69e6, type: 3}
   m_Name: BestDeal
   m_EditorClassIdentifier: 
-  dealTitle: 
-  dealDescription: 
+  dealTitle: The Best Deal
+  dealDescription: A deal with Lucifer. Best ever!
   soulCost: 0
   influenceCost: 0
   secretsCost: 0
-  soulReward: 0
-  influenceReward: 0
-  secretsReward: 0
+  soulReward: 100
+  influenceReward: 100
+  secretsReward: 100
   isWithMortal: 0
