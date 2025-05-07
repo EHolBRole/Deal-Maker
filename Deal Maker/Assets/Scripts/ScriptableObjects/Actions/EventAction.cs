@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Unlock Event Action", menuName = "Actions/Unlock Event Action")]
+[CreateAssetMenu(fileName = "New Event Action", menuName = "Actions/Event Action")]
 public class EventAction : ActionData
 {
     public EventData actionEvent;

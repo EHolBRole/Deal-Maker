@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Resource Action", menuName = "Actions/Resource Change Action")]
+[CreateAssetMenu(fileName = "New Resource Action", menuName = "Actions/Resource Action")]
 public class ResourceChangeAction : ActionData
 {
     public int soulCoinChange;

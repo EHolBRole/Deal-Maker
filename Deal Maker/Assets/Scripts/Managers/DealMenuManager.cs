@@ -7,9 +7,9 @@ public class DealMenuManager : MonoBehaviour
 {
     public GameObject dealMenuPanel;
     public GameObject dealButtonPrefab; 
+
     public Transform dealListParent; 
 
-    public DealData[] allDeals; 
     private ResourceManager resourceManager;
 
     void Start()
@@ -36,8 +36,9 @@ public class DealMenuManager : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        
-        foreach (DealData deal in allDeals)
+        var unlockedDeals = DealManager.Instance.GetUnlockedDeals();
+
+        foreach (DealData deal in unlockedDeals)
         {
             GameObject btn = Instantiate(dealButtonPrefab, dealListParent);
             TMP_Text[] texts = btn.GetComponentsInChildren<TMP_Text>();
@@ -67,12 +68,13 @@ public class DealMenuManager : MonoBehaviour
             resourceManager.ChangeSouls(deal.soulReward);
             resourceManager.ChangeInfluence(deal.influenceReward);
             resourceManager.ChangeSecrets(deal.secretsReward);
+
+            DealManager.Instance.RemoveUnlockedDeal(deal);
         }
         else
         {
             Debug.Log("Couldn't make a deal: " + deal.dealTitle);
         }
-
         
         PopulateDeals();
     }
