@@ -17,10 +17,7 @@ public class DealManager : MonoBehaviour
 
     public void UnlockDeal(DealData deal)
     {
-        if (!unlockedDeals.Contains(deal))
-        {
             unlockedDeals.Add(deal);
-        }
     }
 
     public List<DealData> GetUnlockedDeals()

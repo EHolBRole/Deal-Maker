@@ -5,13 +5,13 @@ public class ResourceUI : MonoBehaviour
 {
     public ResourceManager resourceManager;
 
-    public TextMeshProUGUI soulsText;
+    public TextMeshProUGUI soulCoinsText;
     public TextMeshProUGUI influenceText;
     public TextMeshProUGUI secretsText;
 
     void Update()
     {
-        soulsText.text = $"Souls: {resourceManager.souls}";
+        soulCoinsText.text = $"SoulCoins: {resourceManager.soulCoins}";
         influenceText.text = $"Influence: {resourceManager.influence}";
         secretsText.text = $"Secrets: {resourceManager.secrets}";
     }

@@ -12,6 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3afa2697ac581e24c94d9d89358bf4a5, type: 3}
   m_Name: MinorActionEvent
   m_EditorClassIdentifier: 
-  eventTitle: 
-  eventDescription: 
-  choices: []
+  eventTitle: Minor Action!
+  eventDescription: You've done some minor Action, darling!:)
+  choices:
+  - choiceText: Cool Effect
+    soulChange: 50
+    influenceChange: 50
+    secretChange: 50
+  - choiceText: Shitty Effect
+    soulChange: -100
+    influenceChange: -100
+    secretChange: -100

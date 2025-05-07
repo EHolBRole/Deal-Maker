@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3afa2697ac581e24c94d9d89358bf4a5, type: 3}
-  m_Name: LawyerDealEvent
+  m_Name: DemonDealEvent
   m_EditorClassIdentifier: 
-  eventTitle: A Mortal Offers a Deal
-  eventDescription: A desperate lawyer is willing to give you 10 souls...
+  eventTitle: A free gift!
+  eventDescription: Some strange Demon wants to give you a present..
   choices:
   - choiceText: Accept
     soulChange: 10

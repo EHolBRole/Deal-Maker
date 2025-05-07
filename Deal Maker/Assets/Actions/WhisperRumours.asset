@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a9595b579326c4b9826e02c1090da7, type: 3}
   m_Name: WhisperRumours
   m_EditorClassIdentifier: 
-  actionName: 
-  description: 
+  actionName: Whisper Rumours
+  description: 'You whisper some rumours!
+
+'
   isMajorAction: 0

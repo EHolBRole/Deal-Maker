@@ -12,6 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3afa2697ac581e24c94d9d89358bf4a5, type: 3}
   m_Name: MajorActionEvent
   m_EditorClassIdentifier: 
-  eventTitle: 
-  eventDescription: 
-  choices: []
+  eventTitle: Major Action!
+  eventDescription: You've completed some MAAAAJOR Action! You silly fool...))
+  choices:
+  - choiceText: BIG WIN!
+    soulChange: 1000
+    influenceChange: 1000
+    secretChange: 1000
+  - choiceText: Big Loss...
+    soulChange: -2000
+    influenceChange: -2000
+    secretChange: -2000

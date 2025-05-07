@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52e834b71ea32b445b411cf9ef7bc111, type: 3}
   m_Name: BestDealAction
   m_EditorClassIdentifier: 
-  actionName: 
-  description: 
-  isMajorAction: 0
-  dealToUnlock: {fileID: 0}
+  actionName: The Apple King himself!
+  description: The Lucifer spotted you! You can now make the BEST DEAL OF YOURR LIFE!)
+  isMajorAction: 1
+  dealToUnlock: {fileID: 11400000, guid: bed2f20b77d8b8c4aae78344ce74f0d8, type: 2}

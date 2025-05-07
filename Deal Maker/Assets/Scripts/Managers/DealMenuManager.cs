@@ -11,10 +11,12 @@ public class DealMenuManager : MonoBehaviour
     public Transform dealListParent; 
 
     private ResourceManager resourceManager;
+    private SoulsManager soulsManager;
 
     void Start()
     {
         resourceManager = FindObjectOfType<ResourceManager>();
+        soulsManager = FindObjectOfType<SoulsManager>();    
         dealMenuPanel.SetActive(false); 
     }
 
@@ -45,8 +47,8 @@ public class DealMenuManager : MonoBehaviour
 
             
             texts[0].text = deal.dealTitle;
-            texts[1].text = $"Cost: {deal.soulCost} Souls, {deal.influenceCost} Influence, {deal.secretsCost} Secrets\n" +
-                            $"Gain: +{deal.soulReward} Souls, +{deal.influenceReward} Influence, +{deal.secretsReward} Secrets";
+            texts[1].text = $"Cost: {deal.soulsReward} Souls,{deal.soulCoinsCost} SoulCoins, {deal.influenceCost} Influence, {deal.secretsCost} Secrets\n" +
+                            $"Gain: +{deal.soulsReward} Souls, +{deal.soulCoinsReward} SoulCoins, +{deal.influenceReward} Influence, +{deal.secretsReward} Secrets";
 
             Button button = btn.GetComponent<Button>();
             button.onClick.AddListener(() => AcceptDeal(deal));
@@ -55,19 +57,24 @@ public class DealMenuManager : MonoBehaviour
 
     void AcceptDeal(DealData deal)
     {
-        
-        if (resourceManager.souls >= deal.soulCost &&
+        Debug.Log(deal.soulCoinsCost);
+        Debug.Log(soulsManager.availableSouls);
+        Debug.Log(resourceManager.soulCoins);
+        if (resourceManager.soulCoins >= deal.soulCoinsCost &&
             resourceManager.influence >= deal.influenceCost &&
-            resourceManager.secrets >= deal.secretsCost)
+            resourceManager.secrets >= deal.secretsCost &&
+            soulsManager.availableSouls >= deal.soulsCost)
         {
             Debug.Log("Made deal: " + deal.dealTitle);
-            resourceManager.ChangeSouls(-deal.soulCost);
+            resourceManager.ChangeSouls(-deal.soulCoinsCost);
             resourceManager.ChangeInfluence(-deal.influenceCost);
             resourceManager.ChangeSecrets(-deal.secretsCost);
+            soulsManager.RemoveSouls(deal.soulsCost);
 
-            resourceManager.ChangeSouls(deal.soulReward);
+            resourceManager.ChangeSouls(deal.soulCoinsReward);
             resourceManager.ChangeInfluence(deal.influenceReward);
             resourceManager.ChangeSecrets(deal.secretsReward);
+            soulsManager.AddSouls(deal.soulsReward);
 
             DealManager.Instance.RemoveUnlockedDeal(deal);
         }

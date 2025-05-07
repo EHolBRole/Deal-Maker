@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52e834b71ea32b445b411cf9ef7bc111, type: 3}
   m_Name: ImpFavorAction
   m_EditorClassIdentifier: 
-  actionName: 
-  description: 
-  isMajorAction: 0
-  dealToUnlock: {fileID: 0}
+  actionName: Find an Imp in need
+  description: You try to find an Imp that could use your help!
+  isMajorAction: 1
+  dealToUnlock: {fileID: 11400000, guid: 4e6b25fe683504f4facd5573871132b4, type: 2}

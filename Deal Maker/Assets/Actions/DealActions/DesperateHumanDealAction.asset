@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52e834b71ea32b445b411cf9ef7bc111, type: 3}
   m_Name: DesperateHumanDealAction
   m_EditorClassIdentifier: 
-  actionName: 
-  description: 
-  isMajorAction: 0
-  dealToUnlock: {fileID: 0}
+  actionName: Find a Human to make a Deal with!
+  description: You are looking for a Human that could take a Deal from you!
+  isMajorAction: 1
+  dealToUnlock: {fileID: 11400000, guid: 62e0d38d72eea8648a0e5386f31a669a, type: 2}
