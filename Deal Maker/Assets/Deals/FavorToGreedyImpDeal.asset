@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dealTitle: Favor to Greedy Imp
   dealDescription: Little greedy Imp seeks help to overthrow his Master
-  soulCost: 10
-  influenceCost: 0
-  secretsCost: 0
-  soulReward: 0
-  influenceReward: 5
+  soulCoinsCost: 10
+  influenceCost: 30
+  secretsCost: 5
+  soulsCost: 0
+  soulCoinsReward: 0
+  influenceReward: 0
   secretsReward: 0
+  soulsReward: 1
   isWithMortal: 0

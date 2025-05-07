@@ -58,7 +58,7 @@ public class EventManager : MonoBehaviour
 
     void ApplyChoice(EventChoice choice)
     {
-        resourceManager.ChangeSouls(choice.soulChange);
+        resourceManager.ChangeSoulCoins(choice.soulChange);
         resourceManager.ChangeInfluence(choice.influenceChange);
         resourceManager.ChangeSecrets(choice.secretChange);
         Debug.Log("🔮 Event choice applied.");

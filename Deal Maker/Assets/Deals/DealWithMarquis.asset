@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b61b7bd7483f954bb9b4d0d425b69e6, type: 3}
   m_Name: DealWithMarquis
   m_EditorClassIdentifier: 
-  dealTitle: 
-  dealDescription: 
+  dealTitle: Deal with Marquis
+  dealDescription: A Marquis wishes to make a Deal with you!
   soulCoinsCost: 0
   influenceCost: 0
   secretsCost: 0
-  soulsCost: 0
-  soulCoinsReward: 0
-  influenceReward: 0
-  secretsReward: 0
+  soulsCost: 5
+  soulCoinsReward: 1000
+  influenceReward: 300
+  secretsReward: 100
   soulsReward: 0
   isWithMortal: 0

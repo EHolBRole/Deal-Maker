@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52e834b71ea32b445b411cf9ef7bc111, type: 3}
   m_Name: FindMarquisForDeal
   m_EditorClassIdentifier: 
-  actionName: 
-  description: 
-  isMajorAction: 0
-  dealToUnlock: {fileID: 0}
+  actionName: Try to make a Deal with Marquis
+  description: You try to get yourself opportunity to make a deal with Demon Marquis!!
+  isMajorAction: 1
+  dealToUnlock: {fileID: 11400000, guid: 41bc95fb31874c44ab262c8cc81202ca, type: 2}

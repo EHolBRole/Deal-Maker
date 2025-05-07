@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dealTitle: Desperate Mortal Pact
   dealDescription: A pact with a DEESPERATE Mortal!!
-  soulCost: 0
+  soulCoinsCost: 0
   influenceCost: 0
   secretsCost: 1
-  soulReward: 15
+  soulsCost: 0
+  soulCoinsReward: 0
   influenceReward: 0
   secretsReward: 0
+  soulsReward: 1
   isWithMortal: 1

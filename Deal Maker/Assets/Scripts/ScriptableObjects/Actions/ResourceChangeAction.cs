@@ -15,7 +15,7 @@ public class ResourceChangeAction : ActionData
 
         ResourceManager manager = FindObjectOfType<ResourceManager>();
         
-        manager.ChangeSouls(soulCoinChange);
+        manager.ChangeSoulCoins(soulCoinChange);
         manager.ChangeInfluence(influenceChange);
         manager.ChangeSecrets(secretsChange);
 

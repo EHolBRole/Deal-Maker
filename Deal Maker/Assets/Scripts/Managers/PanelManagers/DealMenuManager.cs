@@ -66,12 +66,12 @@ public class DealMenuManager : MonoBehaviour
             soulsManager.availableSouls >= deal.soulsCost)
         {
             Debug.Log("Made deal: " + deal.dealTitle);
-            resourceManager.ChangeSouls(-deal.soulCoinsCost);
+            resourceManager.ChangeSoulCoins(-deal.soulCoinsCost);
             resourceManager.ChangeInfluence(-deal.influenceCost);
             resourceManager.ChangeSecrets(-deal.secretsCost);
             soulsManager.RemoveSouls(deal.soulsCost);
 
-            resourceManager.ChangeSouls(deal.soulCoinsReward);
+            resourceManager.ChangeSoulCoins(deal.soulCoinsReward);
             resourceManager.ChangeInfluence(deal.influenceReward);
             resourceManager.ChangeSecrets(deal.secretsReward);
             soulsManager.AddSouls(deal.soulsReward);
