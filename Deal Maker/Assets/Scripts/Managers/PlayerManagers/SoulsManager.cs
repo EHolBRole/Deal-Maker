@@ -4,7 +4,6 @@ using UnityEngine;
 public class SoulsManager : MonoBehaviour
 {
     [Header("Soul Count")]
-    public int totalSouls = 0;  // All souls you own
     public int availableSouls = 0; // Free souls ready to be allocated
 
     [Header("Allocation")]
@@ -14,13 +13,19 @@ public class SoulsManager : MonoBehaviour
 
     [Header("Unique Souls")]
     public List<string> uniqueSoulNames = new List<string>(); // Simple version: store names or IDs
-
+    
+    public PlayerDemonController playerController;
     public SoulPanelManager manager;
+
+    public void Start()
+    {
+        availableSouls = playerController.player.souls;
+    }
 
     // === Modify Souls ===
     public void AddSouls(int amount)
     {
-        totalSouls += amount;
+        playerController.player.souls += amount;
         availableSouls += amount;
         manager.UpdatePanel();
     }
@@ -29,7 +34,7 @@ public class SoulsManager : MonoBehaviour
     {
         if (availableSouls >= amount)
         {
-            totalSouls -= amount;
+            playerController.player.souls -= amount;
             availableSouls -= amount;
             manager.UpdatePanel();
             return true;

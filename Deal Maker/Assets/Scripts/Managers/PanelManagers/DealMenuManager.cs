@@ -9,7 +9,7 @@ public class DealMenuManager : MonoBehaviour
     public GameObject dealButtonPrefab; 
 
     public Transform dealListParent; 
-
+    public PlayerDemonController playerController;
     private ResourceManager resourceManager;
     private SoulsManager soulsManager;
 
@@ -59,10 +59,10 @@ public class DealMenuManager : MonoBehaviour
     {
         Debug.Log(deal.soulCoinsCost);
         Debug.Log(soulsManager.availableSouls);
-        Debug.Log(resourceManager.soulCoins);
-        if (resourceManager.soulCoins >= deal.soulCoinsCost &&
-            resourceManager.influence >= deal.influenceCost &&
-            resourceManager.secrets >= deal.secretsCost &&
+        Debug.Log(playerController.player.soulCoins);
+        if (playerController.player.soulCoins >= deal.soulCoinsCost &&
+            playerController.player.influence >= deal.influenceCost &&
+            playerController.player.secrets >= deal.secretsCost &&
             soulsManager.availableSouls >= deal.soulsCost)
         {
             Debug.Log("Made deal: " + deal.dealTitle);

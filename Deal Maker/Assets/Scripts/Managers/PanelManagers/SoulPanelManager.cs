@@ -24,6 +24,7 @@ public class SoulPanelManager : MonoBehaviour
     public GameObject soulsPanel;
 
     public SoulsManager soulManager;
+    public PlayerDemonController playerController;
 
     void Start()
     {
@@ -51,7 +52,7 @@ public class SoulPanelManager : MonoBehaviour
 
     public void UpdatePanel()
     {
-        totalText.text = $"Total Souls: {soulManager.totalSouls}";
+        totalText.text = $"Total Souls: {playerController.player.souls}";
         availableText.text = $"Available Souls: {soulManager.availableSouls}";
         militaryText.text = $"Military Souls: {soulManager.militarySouls}";
         spyText.text = $"Spy Souls: {soulManager.spySouls}";

@@ -13,13 +13,6 @@ public class UpgradePanelManager : MonoBehaviour
     public UpgradeManager upgradeManager;  // Reference to the upgrade manager
     public List<UpgradeData> availableUpgrades;  // List of all available upgrades
 
-    void Start()
-    {
-        // Initially, hide the upgrade panel
-        upgradePanel.SetActive(false);
-
-    }
-
     public void ToggleUpgradePanel()
     {
         // Toggle the visibility of the upgrade panel

@@ -47,6 +47,7 @@ public class TurnManager : MonoBehaviour
         currentWeek++;
 
         FindObjectOfType<EventManager>().TriggerRandomEvent();
+        FindObjectOfType<RivalManager>().RunWeeklyTick();
 
         majorActionsUsed = 0;
         minorActionsUsed = 0;

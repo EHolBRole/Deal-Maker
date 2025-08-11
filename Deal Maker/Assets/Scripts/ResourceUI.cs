@@ -3,7 +3,7 @@ using TMPro;
 
 public class ResourceUI : MonoBehaviour
 {
-    public ResourceManager resourceManager;
+    public PlayerDemonController playerController;
 
     public TextMeshProUGUI soulCoinsText;
     public TextMeshProUGUI influenceText;
@@ -11,8 +11,8 @@ public class ResourceUI : MonoBehaviour
 
     void Update()
     {
-        soulCoinsText.text = $"SoulCoins: {resourceManager.soulCoins}";
-        influenceText.text = $"Influence: {resourceManager.influence}";
-        secretsText.text = $"Secrets: {resourceManager.secrets}";
+        soulCoinsText.text = $"SoulCoins: {playerController.player.soulCoins}";
+        influenceText.text = $"Influence: {playerController.player.influence}";
+        secretsText.text = $"Secrets: {playerController.player.secrets}";
     }
 }

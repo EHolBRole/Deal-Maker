@@ -4,14 +4,15 @@ using UnityEngine;
 public class UpgradeManager : MonoBehaviour
 {
     public PlayerStatsManager playerStats;
-    public ResourceManager resourceManager; // For checking if the player has enough resources
+    public ResourceManager resourceManager;
+    public PlayerDemonController playerController; // For checking if the player has enough resources
 
     public void ApplyUpgrade(UpgradeData upgrade)
     {
         // Check if the player has enough resources
-        if (resourceManager.soulCoins >= upgrade.costSoulCoins &&
-            resourceManager.influence >= upgrade.costInfluence &&
-            resourceManager.secrets >= upgrade.costSecrets)
+        if (playerController.player.soulCoins >= upgrade.costSoulCoins &&
+            playerController.player.influence >= upgrade.costInfluence &&
+            playerController.player.secrets >= upgrade.costSecrets)
         {
             // Deduct the costs
             resourceManager.ChangeSoulCoins(-upgrade.costSoulCoins);
@@ -19,27 +20,27 @@ public class UpgradeManager : MonoBehaviour
             resourceManager.ChangeSecrets(-upgrade.costSecrets);
 
             // Apply the upgrade
-            if (upgrade.statType == "Leadership")
+            switch (upgrade.statType)
             {
-                playerStats.IncreaseLeadership(upgrade.statIncrease);
+                case "Leadership":
+                    playerStats.IncreaseLeadership(upgrade.statIncrease);
+                    break;
+                case "Charisma":
+                    playerStats.IncreaseCharisma(upgrade.statIncrease);
+                    break;
+                case "Action Slots":
+                    playerStats.UpgradeActionSlots(upgrade.statIncrease);
+                    break;
+                case "Soul Capacity":
+                    playerStats.UpgradeSoulCapacity(upgrade.statIncrease);
+                    break;
+                case "Deal Slot Limit":
+                    playerStats.UpgradeDealSlotLimit(upgrade.statIncrease);
+                    break;
+                default:
+                    Debug.Log("Something went wrong with upgrade Stat type!");
+                    break;
             }
-            else if (upgrade.statType == "Charisma")
-            {
-                playerStats.IncreaseCharisma(upgrade.statIncrease);
-            }
-            else if (upgrade.statType == "Action Slots")
-            {
-                playerStats.UpgradeActionSlots(upgrade.statIncrease);
-            }
-            else if (upgrade.statType == "Soul Capacity")
-            {
-                playerStats.UpgradeSoulCapacity(upgrade.statIncrease);
-            }   
-            else if (upgrade.statType == "Deal Slot Limit")
-            {
-                playerStats.UpgradeDealSlotLimit(upgrade.statIncrease);
-            }
-
             Debug.Log("Upgrade applied: " + upgrade.upgradeName);
         }
         else
