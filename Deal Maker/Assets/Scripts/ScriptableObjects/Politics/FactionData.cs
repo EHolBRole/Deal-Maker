@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Template/FactionTemplate")]
-public class FactionTemplateSO : ScriptableObject
+[CreateAssetMenu(menuName = "Politics/FactionTemplate")]
+public class FactionData : ScriptableObject
 {
     public string factionName;
 }

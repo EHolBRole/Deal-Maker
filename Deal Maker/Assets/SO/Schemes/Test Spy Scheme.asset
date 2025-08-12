@@ -9,7 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d48071ff0a547ff4bbd42c3c0a4f25f8, type: 3}
-  m_Name: TestFaction
+  m_Script: {fileID: 11500000, guid: 63f1e260665495a4f824ee61564bf2a6, type: 3}
+  m_Name: Test Spy Scheme
   m_EditorClassIdentifier: 
-  factionName: Test
+  schemeName: Spy on a Rival
+  type: 0
+  costInfluence: 20
+  baseSuccessChance: 50
+  description: You try to spy on your rival

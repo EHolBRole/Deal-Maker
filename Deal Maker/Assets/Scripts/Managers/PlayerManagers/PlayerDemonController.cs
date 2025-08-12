@@ -4,7 +4,7 @@ using System;
 public class PlayerDemonController : MonoBehaviour
 {
 
-    public DemonTemplateSO player_template;
+    public DemonData player_template;
     public DemonState player;
 
     void Start()

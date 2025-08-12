@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c306c5bf0d45942b368b136968baac, type: 3}
   m_Name: Lucifer
   m_EditorClassIdentifier: 
-  demonName: 
-  factionName: 
-  rank: 0
-  baseSoulCoins: 0
-  baseInfluence: 0
-  baseSecrets: 0
-  baseSouls: 0
-  baseCharisma: 0
-  baseLeadership: 0
+  demonName: Lucifer
+  factionName: None
+  rank: 4
+  baseSoulCoins: 100000
+  baseInfluence: 100000
+  baseSecrets: 100000
+  baseSouls: 500000
+  baseCharisma: 1000
+  baseLeadership: 1000

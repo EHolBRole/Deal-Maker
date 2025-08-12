@@ -2,7 +2,7 @@
 {
     public string factionName;
 
-    public FactionState(FactionTemplateSO template)
+    public FactionState(FactionData template)
     {
         factionName = template.factionName;
     }

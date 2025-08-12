@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c306c5bf0d45942b368b136968baac, type: 3}
   m_Name: KharonDemon
   m_EditorClassIdentifier: 
-  demonName: 
-  factionName: 
+  demonName: Kharon
+  factionName: Something
   rank: 0
-  baseSoulCoins: 0
-  baseInfluence: 0
-  baseSecrets: 0
-  baseSouls: 0
-  baseCharisma: 0
-  baseLeadership: 0
+  baseSoulCoins: 100
+  baseInfluence: 50
+  baseSecrets: 100
+  baseSouls: 25
+  baseCharisma: 5
+  baseLeadership: 5

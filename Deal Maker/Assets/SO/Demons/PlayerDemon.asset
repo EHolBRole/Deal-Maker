@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c306c5bf0d45942b368b136968baac, type: 3}
   m_Name: PlayerDemon
   m_EditorClassIdentifier: 
-  demonName: 
+  demonName: Player
+  factionName: None
   rank: 0
-  baseInfluence: 0
-  basePower: 0
-  factionName: 
+  baseSoulCoins: 5
+  baseInfluence: 5
+  baseSecrets: 5
+  baseSouls: 2
+  baseCharisma: 1
+  baseLeadership: 1
