@@ -14,7 +14,7 @@ In **Deal Maker**, you start as a lowly Demon Baron aiming to rise through the r
 
 - **Turn-Based Gameplay:** Plan your moves carefully each turn to optimize resource gain and influence.
 
-- **Demon Entities:** Unique demon characters with traits, relationships, and rivalries affecting their behavior.
+- **Demon Entities:** Unique demon characters with relationships, and rivalries affecting their behavior.
 
 - **Politics & Intrigue System:** Employ weighted schemes and strategies influenced by demon preferences and alliances.
 
