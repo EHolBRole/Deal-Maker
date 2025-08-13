@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c306c5bf0d45942b368b136968baac, type: 3}
+  m_Name: Kharon
+  m_EditorClassIdentifier: 
+  demonName: Kharon
+  DemonID: 3
+  factionName: Something
+  rank: 0
+  schemeList:
+  - {fileID: 11400000, guid: 1e326caafb623074ea050aab78d2e9ac, type: 2}
+  - {fileID: 11400000, guid: ca3adc2edcdbc204b82f5e0df27f4267, type: 2}
+  - {fileID: 11400000, guid: 39bc5ba7a461f664a913f6702f711869, type: 2}
+  - {fileID: 11400000, guid: a591848dae17c2243a5349e7d47b6dbb, type: 2}
+  startingRelations:
+  - otherDemon: {fileID: 11400000, guid: a25366fe606a8724ab8e01fc497b845c, type: 2}
+    initialRelation: -50
+  - otherDemon: {fileID: 11400000, guid: 333fb4710beef3f409ef06b3962048c7, type: 2}
+    initialRelation: 100
+  - otherDemon: {fileID: 11400000, guid: 1e13348d1ed246643bcbefeb7106de52, type: 2}
+    initialRelation: 60
+  - otherDemon: {fileID: 11400000, guid: 4c037b226efcf124d8d1e3479b579754, type: 2}
+    initialRelation: -17
+  traits:
+  - {fileID: 11400000, guid: b81bd9cb19125814286fcde3e2e1ccb7, type: 2}
+  - {fileID: 11400000, guid: 4f141942ce229044faa82c2b49b792c5, type: 2}
+  baseSoulCoins: 100
+  baseInfluence: 50
+  baseSecrets: 100
+  baseSouls: 25
+  baseCharisma: 5
+  baseLeadership: 5

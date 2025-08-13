@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63f1e260665495a4f824ee61564bf2a6, type: 3}
+  m_Name: Test Sabotage Scheme
+  m_EditorClassIdentifier: 
+  schemeName: Sabotage a rival
+  costInfluence: 15
+  costSecrets: 0
+  baseSuccessChance: 50
+  description: You try sabotaging your rival!
+  debugLogSuccess: sabotaged
+  debugLogFailure: failed to sabotage
+  schemeCategory: 0
+  successEffects:
+  - {fileID: 11400000, guid: 34caafdc6b218ff48a6dbe19bbf7a9b1, type: 2}
+  failureEffects:
+  - {fileID: 11400000, guid: c017963572c78de459070a942149e824, type: 2}

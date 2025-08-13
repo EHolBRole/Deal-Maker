@@ -9,15 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58c306c5bf0d45942b368b136968baac, type: 3}
-  m_Name: Lucifer
+  m_Script: {fileID: 11500000, guid: abcb679fc88bee94189059951bbdcd5d, type: 3}
+  m_Name: SmallDecreaseInfluence
   m_EditorClassIdentifier: 
-  demonName: Lucifer
-  factionName: None
-  rank: 4
-  baseSoulCoins: 100000
-  baseInfluence: 100000
-  baseSecrets: 100000
-  baseSouls: 500000
-  baseCharisma: 1000
-  baseLeadership: 1000
+  description: 'Decreases targets influence by 20!
+
+'
+  resourceType: 0
+  amount: 20
+  isOnTarget: 1

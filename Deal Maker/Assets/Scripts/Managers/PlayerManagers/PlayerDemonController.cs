@@ -4,11 +4,13 @@ using System;
 public class PlayerDemonController : MonoBehaviour
 {
 
-    public DemonData player_template;
+    public DemonData playerTemplate;
+    public FactionData noFactionTemplate;
     public DemonState player;
 
     void Start()
     {
-        player = new DemonState(player_template);
+        player = new DemonState(playerTemplate);
+        player.faction = new FactionState(noFactionTemplate);
     }
 }

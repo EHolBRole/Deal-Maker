@@ -22,10 +22,17 @@ public class SoulsManager : MonoBehaviour
         availableSouls = playerController.player.souls;
     }
 
+    public void ProcessSoulsGain() // TODO: Use ModifyResource only in ResourceManager.
+    {
+        playerController.player.ModifyResource(ResourceType.Influence, militarySouls * 5);
+        playerController.player.ModifyResource(ResourceType.Secrets, spySouls * 5);
+        playerController.player.ModifyResource(ResourceType.SoulCoins, industrySouls * 5);
+    }
+
     // === Modify Souls ===
     public void AddSouls(int amount)
     {
-        playerController.player.souls += amount;
+        playerController.player.ModifyResource(ResourceType.Souls, amount);
         availableSouls += amount;
         manager.UpdatePanel();
     }

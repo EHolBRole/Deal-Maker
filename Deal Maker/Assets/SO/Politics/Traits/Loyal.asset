@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e466c4547792e74eb4f1a102eb6a0fc, type: 3}
+  m_Name: Loyal
+  m_EditorClassIdentifier: 
+  traitName: Loyal
+  description: This demon is really loyal!
+  schemePreferences: []
+  aggressionMultiplier: 1
+  cautionMultiplier: 1
+  loyaltyMultiplier: 1.5

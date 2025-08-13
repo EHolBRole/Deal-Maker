@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d48071ff0a547ff4bbd42c3c0a4f25f8, type: 3}
-  m_Name: TestFaction
+  m_Script: {fileID: 11500000, guid: d05a63fc03e3f0b41907e0ca9e75616f, type: 3}
+  m_Name: SmallRelationIncrease
   m_EditorClassIdentifier: 
-  factionName: Test
+  description: Increases relation by 15!
+  amount: 15

@@ -7,10 +7,10 @@ public class DemonState
     public string name;
     public string demonID;
     //Politics
-    public string factionName;
     public DemonRank rank;
+    public FactionState faction;
+    public DemonPersonality personality;
     public List<SchemeData> schemeList;
-    public List<PreferredScheme> preferredSchemes;
     // Base resources
     public int soulCoins;
     public int influence;
@@ -28,9 +28,22 @@ public class DemonState
         name = template.demonName;
         demonID = template.DemonID;
 
-        factionName = template.factionName;
+        
         rank = template.rank;
+        faction = new FactionState(template.faction);
+        personality = new DemonPersonality();
         schemeList = template.schemeList;
+
+        foreach (var r in template.startingRelations)
+        {
+            SetRelation(r.otherDemon.DemonID, r.initialRelation);
+        }
+        
+
+        foreach (var trait in template.traits)
+        {
+            personality.traits.Add(trait);
+        }
 
 
         influence = template.baseInfluence;
@@ -41,18 +54,51 @@ public class DemonState
         charisma = template.baseCharisma;
         leadership = template.baseLeadership;
 
-        foreach(var r in template.startingRelations)
-        {
-            SetRelation(r.otherDemon.DemonID, r.initialRelation);
-        }
 
-        preferredSchemes = new List<PreferredScheme>();
-        foreach (var pref in template.preferredSchemes)
-        {
-            // THINK: Create new PreferredScheme instances if needed
-            preferredSchemes.Add(pref);
-        }
+    }
 
+    public float GetPowerScore()
+    {
+        // Combine resources + stats into a single score
+        float score = influence + secrets + souls;
+        score += charisma + leadership;
+        return score;
+    }
+
+    public int GetResource(ResourceType type)
+    {
+        switch (type)
+        {
+            case ResourceType.SoulCoins:
+                return this.soulCoins;
+            case ResourceType.Influence:
+                return this.influence;
+            case ResourceType.Secrets:
+                return this.secrets;
+            case ResourceType.Souls:
+                return this.souls;
+            default:
+                return 0;
+        }
+    }
+
+    public void ModifyResource(ResourceType type, int value)
+    {
+        switch (type)
+        {
+            case ResourceType.SoulCoins:
+                this.soulCoins += value;
+                break;
+            case ResourceType.Influence:
+                this.influence += value;
+                break;
+            case ResourceType.Secrets:
+                this.secrets += value;
+                break;
+            case ResourceType.Souls:
+                this.souls += value;
+                break;
+        }
     }
 
     public void SetRelation(string targetID, int value)

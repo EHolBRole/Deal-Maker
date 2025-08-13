@@ -25,11 +25,11 @@ public class DemonData : ScriptableObject
     public string demonName;
     public string DemonID;
     [Header("Politics")]
-    public string factionName;
     public DemonRank rank;
+    public FactionData faction;
     public List<SchemeData> schemeList;
-    public List<PreferredScheme> preferredSchemes = new List<PreferredScheme>();
     public List<DemonRelationData> startingRelations = new List<DemonRelationData>();
+    public List<DemonTraitData> traits = new List<DemonTraitData>();
     [Header("Base resources")]
     public int baseSoulCoins;
     public int baseInfluence;

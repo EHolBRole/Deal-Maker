@@ -48,6 +48,7 @@ public class TurnManager : MonoBehaviour
 
         FindObjectOfType<EventManager>().TriggerRandomEvent();
         FindObjectOfType<RivalManager>().RunWeeklyTick();
+        FindObjectOfType<SoulsManager>().ProcessSoulsGain();
 
         majorActionsUsed = 0;
         minorActionsUsed = 0;

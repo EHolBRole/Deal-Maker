@@ -13,11 +13,18 @@ MonoBehaviour:
   m_Name: PlayerDemon
   m_EditorClassIdentifier: 
   demonName: Player
+  DemonID: 1
   factionName: None
   rank: 0
+  schemeList:
+  - {fileID: 11400000, guid: 1e326caafb623074ea050aab78d2e9ac, type: 2}
+  - {fileID: 11400000, guid: ca3adc2edcdbc204b82f5e0df27f4267, type: 2}
+  - {fileID: 11400000, guid: 39bc5ba7a461f664a913f6702f711869, type: 2}
+  preferredSchemes: []
+  startingRelations: []
   baseSoulCoins: 5
   baseInfluence: 5
   baseSecrets: 5
-  baseSouls: 2
+  baseSouls: 6
   baseCharisma: 1
   baseLeadership: 1

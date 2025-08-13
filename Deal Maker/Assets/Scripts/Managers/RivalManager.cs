@@ -1,8 +1,6 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using UnityEditor.UI;
-using static UnityEngine.GraphicsBuffer;
 
 public static class RelationThresholds
 {
@@ -10,6 +8,11 @@ public static class RelationThresholds
     public const int ALLY_THRESHOLD = 30;
 }
 
+public static class ResourceThresholds
+{
+    public const int LOW_AMOUNT = 100;
+    public const int HIGH_AMOUNT = 1000;
+}
 
 public class RivalManager : MonoBehaviour
 {
@@ -61,11 +64,9 @@ public class RivalManager : MonoBehaviour
         {
             // Optionally handle no action or fallback here
             Debug.Log($"{demon.name} has no valid political action to perform this turn.");
-            Debug.Log(target);
-            Debug.Log(scheme);
         }
     }
-    public SchemeData ChooseScheme(DemonState executor, DemonState target)
+    public SchemeData ChooseScheme(DemonState executor, DemonState target) // Make a check so Demon couldn't improve Relations with player!
     {
         if (target == null)
             return null;
@@ -80,87 +81,90 @@ public class RivalManager : MonoBehaviour
         else
             category = SchemeCategory.Neutral;
 
-        var preferredByCategory = executor.preferredSchemes
-        .Where(ps => ps.scheme.schemeCategory == category)
-        .ToList();
+        // Filter by category
+        var availableSchemes = executor.schemeList
+            .Where(s => s.schemeCategory == category)
+            .ToList();
 
-        if (preferredByCategory.Count > 0)
+        if (availableSchemes.Count == 0)
+            return null;
+
+        // Apply personality weights
+        var weightedSchemes = new List<(SchemeData scheme, float weight)>();
+        foreach (var scheme in availableSchemes)
         {
-            return GetWeightedRandomPreferredScheme(preferredByCategory);
-        }
-        else 
-        { 
-            var availableSchemes = executor.schemeList
-                .Where(s => s.schemeCategory == category)
-                .ToList();
+            float personalityWeight = executor.personality.GetSchemeWeight(scheme);
+            float strategicWeight = scheme.CalculateStrategicWeight(executor, target);
 
-            if (availableSchemes.Count == 0)
-                return null;
-
-            return availableSchemes[Random.Range(0, availableSchemes.Count)];
-
+            float factionWeight = 1f;
+            if (executor.faction.GetRelation(target.faction.factionID) < -30) factionWeight = 1.2f; // more aggressive
+            else if (executor.faction.GetRelation(target.faction.factionID) > 30) factionWeight = 0.8f; // more cooperative
+            // Combine personality, strategicWeight and factionWeight
+            float combinedWeight = personalityWeight * strategicWeight * factionWeight;
+            weightedSchemes.Add((scheme, combinedWeight));
         }
 
+        // Weighted random selection
+        float totalWeight = weightedSchemes.Sum(ws => ws.weight);
+        float randomValue = Random.Range(0f, totalWeight);
+        float runningSum = 0f;
+
+        foreach (var ws in weightedSchemes)
+        {
+            runningSum += ws.weight;
+            if (randomValue <= runningSum)
+                return ws.scheme;
+        }
+
+        return null; // Fallback
     }
-    private SchemeData GetWeightedRandomPreferredScheme(List<PreferredScheme> preferredSchemes)
-    {
-        int totalWeight = preferredSchemes.Sum(ps => ps.weight);
-        int randomValue = Random.Range(0, totalWeight);
-        int runningSum = 0;
 
-        foreach (var ps in preferredSchemes)
+    public DemonState ChooseTarget(DemonState executor)
+    {
+        var candidates = new List<(DemonState target, float weight)>();
+
+        foreach (var d in demons.Concat(new[] { playerController.player }))
         {
-            runningSum += ps.weight;
-            if (randomValue < runningSum)
-                return ps.scheme;
+            if (d.demonID == executor.demonID)
+                continue;
+
+            float relation = executor.GetRelation(d.demonID);
+            float weight = 1f;
+
+            if (relation < RelationThresholds.ENEMY_THRESHOLD)
+                weight *= executor.personality.GetAggression();    // enemies weighted by aggression
+            else if (relation > RelationThresholds.ALLY_THRESHOLD)
+                weight *= executor.personality.GetLoyalty();       // allies weighted by loyalty
+            else
+                weight *= executor.personality.GetCaution();       // neutrals weighted by caution
+
+            if (executor.faction != null && d.faction != null)
+            {
+                int factionRelation = executor.faction.GetRelation(d.faction.factionID);
+                if (factionRelation < -30) weight *= 1.2f; // hostile factions → more attractive target
+                else if (factionRelation > 30) weight *= 0.8f; // friendly factions → less attractive
+            }
+            // Add only targets with positive weight
+            if (weight > 0f)
+                candidates.Add((d, weight));
+        }
+
+        if (candidates.Count == 0)
+            return null;
+
+        // Weighted random selection
+        float totalWeight = candidates.Sum(c => c.weight);
+        float randomValue = Random.Range(0f, totalWeight);
+        float runningSum = 0f;
+
+        foreach (var c in candidates)
+        {
+            runningSum += c.weight;
+            if (randomValue <= runningSum)
+                return c.target;
         }
 
         return null;
-    }
-    public DemonState ChooseTarget(DemonState executor)
-    {
-        var enemies = demons
-            .Where(d => executor.GetRelation(d.demonID) < RelationThresholds.ENEMY_THRESHOLD &&
-            d.demonID != executor.demonID)
-            .ToList();
-
-        if (executor.GetRelation(playerController.player.demonID) < RelationThresholds.ENEMY_THRESHOLD)
-            enemies.Add(playerController.player);
-
-        if (enemies.Count > 0)
-        {
-            return enemies[Random.Range(0, enemies.Count)];
-        }
-
-        var allies = demons
-            .Where(d => executor.GetRelation(d.demonID) > RelationThresholds.ALLY_THRESHOLD &&
-            d.demonID != executor.demonID)
-            .ToList();
-
-        if (executor.GetRelation(playerController.player.demonID) > RelationThresholds.ALLY_THRESHOLD)
-            allies.Add(playerController.player);
-
-        if (allies.Count > 0)
-        {
-            return allies[Random.Range(0, allies.Count)];
-        }
-
-        var neutrals = demons
-            .Where(d => executor.GetRelation(d.demonID) >= RelationThresholds.ENEMY_THRESHOLD && 
-            executor.GetRelation(d.demonID) <= RelationThresholds.ALLY_THRESHOLD && 
-            d.demonID != executor.demonID)
-            .ToList();
-
-        if (executor.GetRelation(playerController.player.demonID) >= RelationThresholds.ENEMY_THRESHOLD &&
-            executor.GetRelation(playerController.player.demonID) <= RelationThresholds.ALLY_THRESHOLD)
-            neutrals.Add(playerController.player);
-
-        if (neutrals.Count > 0)
-        {
-            return neutrals[Random.Range(0, neutrals.Count)];
-        }
-
-        return null; // No valid target
 
     }
 }

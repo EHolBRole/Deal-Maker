@@ -814,7 +814,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 115, y: 161}
+  m_AnchoredPosition: {x: 115, y: 160}
   m_SizeDelta: {x: 186.25, y: 55.295}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &175128239
@@ -2091,7 +2091,7 @@ GameObject:
   - component: {fileID: 277486734}
   - component: {fileID: 277486733}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: TurnManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3710,7 +3710,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -75, y: 162}
+  m_AnchoredPosition: {x: -75, y: 160}
   m_SizeDelta: {x: 190.43, y: 54.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &519013951
@@ -7142,8 +7142,10 @@ MonoBehaviour:
   demonTemplates:
   - {fileID: 11400000, guid: 333fb4710beef3f409ef06b3962048c7, type: 2}
   - {fileID: 11400000, guid: 98839993434b3154485fd6c9913c7dc7, type: 2}
+  - {fileID: 11400000, guid: 1e13348d1ed246643bcbefeb7106de52, type: 2}
   factionTemplates:
   - {fileID: 11400000, guid: ae38175fd39c0394d9e84fd44c44518c, type: 2}
+  playerController: {fileID: 214301620}
 --- !u!4 &1077217097
 Transform:
   m_ObjectHideFlags: 0
@@ -8702,6 +8704,7 @@ MonoBehaviour:
   availableUpgrades:
   - {fileID: 11400000, guid: c842c5f9c10792d4487db24ea47660a3, type: 2}
   - {fileID: 11400000, guid: 139c7e707d1204047bb5ea519d690919, type: 2}
+  - {fileID: 11400000, guid: 60ade3332faad684ebe2c25e9039b663, type: 2}
 --- !u!114 &1374271719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11208,23 +11211,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 2077022437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 5
-    m_Right: 5
-    m_Top: 5
-    m_Bottom: 5
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 20
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 150, y: 150}
+  m_Spacing: {x: 50, y: 50}
+  m_Constraint: 2
+  m_ConstraintCount: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

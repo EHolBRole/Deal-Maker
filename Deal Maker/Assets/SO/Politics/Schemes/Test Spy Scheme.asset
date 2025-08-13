@@ -13,7 +13,14 @@ MonoBehaviour:
   m_Name: Test Spy Scheme
   m_EditorClassIdentifier: 
   schemeName: Spy on a Rival
-  type: 0
   costInfluence: 20
+  costSecrets: 0
   baseSuccessChance: 50
   description: You try to spy on your rival
+  debugLogSuccess: spied on
+  debugLogFailure: failed to spy on
+  schemeCategory: 2
+  successEffects:
+  - {fileID: 11400000, guid: 2c5c4fd5467e9f240a6630c8aabcd3eb, type: 2}
+  failureEffects:
+  - {fileID: 11400000, guid: 918f2c70de75fec44ad5d88ff2902646, type: 2}
