@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 422ee9d9ee136e2458b794d5dcc67c3a, type: 3}
+  m_Name: UpgradeActionSlot
+  m_EditorClassIdentifier: 
+  upgradeName: Action Slot+
+  description: Get new action slot!
+  costSoulCoins: 0
+  costInfluence: 20
+  costSecrets: 0
+  statIncrease: 1
+  statType: Action Slots

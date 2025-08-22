@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e466c4547792e74eb4f1a102eb6a0fc, type: 3}
+  m_Name: Agressive
+  m_EditorClassIdentifier: 
+  traitName: Agressive
+  description: This demon is agressive!
+  schemePreferences:
+  - scheme: {fileID: 11400000, guid: ca3adc2edcdbc204b82f5e0df27f4267, type: 2}
+    weight: 0.5
+  - scheme: {fileID: 11400000, guid: 39bc5ba7a461f664a913f6702f711869, type: 2}
+    weight: 0.2
+  aggressionMultiplier: 1.3
+  cautionMultiplier: 0.8
+  loyaltyMultiplier: 0.9

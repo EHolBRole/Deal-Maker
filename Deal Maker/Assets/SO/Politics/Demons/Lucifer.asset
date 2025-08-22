@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c306c5bf0d45942b368b136968baac, type: 3}
+  m_Name: Lucifer
+  m_EditorClassIdentifier: 
+  demonName: Lucifer
+  DemonID: 2
+  rank: 4
+  faction: {fileID: 11400000, guid: f0e23dcd459a6fe489afe13a1a3deffe, type: 2}
+  schemeList:
+  - {fileID: 11400000, guid: 1e326caafb623074ea050aab78d2e9ac, type: 2}
+  - {fileID: 11400000, guid: 39bc5ba7a461f664a913f6702f711869, type: 2}
+  - {fileID: 11400000, guid: ca3adc2edcdbc204b82f5e0df27f4267, type: 2}
+  - {fileID: 11400000, guid: a591848dae17c2243a5349e7d47b6dbb, type: 2}
+  startingRelations:
+  - otherDemon: {fileID: 11400000, guid: a25366fe606a8724ab8e01fc497b845c, type: 2}
+    initialRelation: 15
+  - otherDemon: {fileID: 11400000, guid: 98839993434b3154485fd6c9913c7dc7, type: 2}
+    initialRelation: -15
+  - otherDemon: {fileID: 11400000, guid: 1e13348d1ed246643bcbefeb7106de52, type: 2}
+    initialRelation: -48
+  - otherDemon: {fileID: 11400000, guid: 4c037b226efcf124d8d1e3479b579754, type: 2}
+    initialRelation: -49
+  traits:
+  - {fileID: 11400000, guid: bf5d538121daa3b40a982aa3a629b173, type: 2}
+  baseSoulCoins: 100000
+  baseInfluence: 100000
+  baseSecrets: 100000
+  baseSouls: 500000
+  baseCharisma: 1000
+  baseLeadership: 1000

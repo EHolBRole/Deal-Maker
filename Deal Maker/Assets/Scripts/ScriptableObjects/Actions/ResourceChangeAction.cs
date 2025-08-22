@@ -11,13 +11,14 @@ public class ResourceChangeAction : ActionData
 
     public override void ExecuteAction()
     {
-        Debug.Log("Changed players resources!");
 
         ResourceManager manager = FindObjectOfType<ResourceManager>();
         
         manager.ChangeSoulCoins(soulCoinChange);
         manager.ChangeInfluence(influenceChange);
         manager.ChangeSecrets(secretsChange);
+
+        Debug.Log("Changed players resources!");
 
     }
 }

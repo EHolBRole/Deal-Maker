@@ -2,16 +2,14 @@ using UnityEngine;
 
 public class PlayerStatsManager : MonoBehaviour
 {
-    // === Demon Stats ===
-    [Header("Demon Stats")]
-    public int leadership = 1;
-    public int charisma = 1;
 
-    public void IncreaseLeadership(int amount = 1) => leadership += amount;
-    public void IncreaseCharisma(int amount = 1) => charisma += amount;
+    public PlayerDemonController playerController;
 
-    public int GetLeadership() => leadership;
-    public int GetCharisma() => charisma;
+    public void IncreaseLeadership(int amount = 1) => playerController.player.leadership += amount;
+    public void IncreaseCharisma(int amount = 1) => playerController.player.charisma += amount;
+
+    public int GetLeadership() => playerController.player.leadership;
+    public int GetCharisma() => playerController.player.charisma;
 
 
     // === Domain Stats ===
