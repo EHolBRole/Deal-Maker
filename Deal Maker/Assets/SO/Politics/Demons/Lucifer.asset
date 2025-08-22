@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   demonName: Lucifer
   DemonID: 2
-  factionName: None
   rank: 4
+  faction: {fileID: 11400000, guid: f0e23dcd459a6fe489afe13a1a3deffe, type: 2}
   schemeList:
   - {fileID: 11400000, guid: 1e326caafb623074ea050aab78d2e9ac, type: 2}
   - {fileID: 11400000, guid: 39bc5ba7a461f664a913f6702f711869, type: 2}

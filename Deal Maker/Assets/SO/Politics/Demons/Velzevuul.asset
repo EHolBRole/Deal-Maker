@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   demonName: Velzevuul
   DemonID: 4
-  factionName: Something
   rank: 3
+  faction: {fileID: 11400000, guid: 3c4278b8f0d94e14aa8ab988f94415dd, type: 2}
   schemeList:
   - {fileID: 11400000, guid: 1e326caafb623074ea050aab78d2e9ac, type: 2}
   - {fileID: 11400000, guid: ca3adc2edcdbc204b82f5e0df27f4267, type: 2}

@@ -21,6 +21,7 @@ MonoBehaviour:
   debugLogFailure: failed to steal soulcoins from
   schemeCategory: 0
   successEffects:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: fdfe735617348434b8041d7252c19ef8, type: 2}
+  - {fileID: 11400000, guid: d9b1dffa6a814c948b1189f040f0a204, type: 2}
   failureEffects:
   - {fileID: 11400000, guid: c017963572c78de459070a942149e824, type: 2}

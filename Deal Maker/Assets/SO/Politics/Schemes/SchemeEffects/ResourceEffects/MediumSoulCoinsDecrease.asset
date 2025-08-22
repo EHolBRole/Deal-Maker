@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abcb679fc88bee94189059951bbdcd5d, type: 3}
   m_Name: MediumSoulCoinsDecrease
   m_EditorClassIdentifier: 
-  description: Medium increase of soul coins!
+  description: Medium decrease of soul coins!
   resourceType: 1
-  amount: 70
-  isOnTarget: 0
+  amount: -70
+  isOnTarget: 1

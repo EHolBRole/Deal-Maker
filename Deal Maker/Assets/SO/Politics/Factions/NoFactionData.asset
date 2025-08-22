@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48071ff0a547ff4bbd42c3c0a4f25f8, type: 3}
   m_Name: NoFactionData
   m_EditorClassIdentifier: 
-  factionName: 
-  factionID: 
+  factionName: Independent
+  factionID: 3
   startingRelations: []

@@ -1230,7 +1230,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b6d7c5fd835ae47ba04dc3d17dab10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_template: {fileID: 11400000, guid: a25366fe606a8724ab8e01fc497b845c, type: 2}
+  playerTemplate: {fileID: 11400000, guid: a25366fe606a8724ab8e01fc497b845c, type: 2}
+  noFactionTemplate: {fileID: 11400000, guid: 4049aa7fb2013494490b3e22574fc08c, type: 2}
 --- !u!4 &214301621
 Transform:
   m_ObjectHideFlags: 0
@@ -7143,8 +7144,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 333fb4710beef3f409ef06b3962048c7, type: 2}
   - {fileID: 11400000, guid: 98839993434b3154485fd6c9913c7dc7, type: 2}
   - {fileID: 11400000, guid: 1e13348d1ed246643bcbefeb7106de52, type: 2}
+  - {fileID: 11400000, guid: 4c037b226efcf124d8d1e3479b579754, type: 2}
   factionTemplates:
-  - {fileID: 11400000, guid: ae38175fd39c0394d9e84fd44c44518c, type: 2}
+  - {fileID: 11400000, guid: f0e23dcd459a6fe489afe13a1a3deffe, type: 2}
+  - {fileID: 11400000, guid: 3c4278b8f0d94e14aa8ab988f94415dd, type: 2}
+  - {fileID: 11400000, guid: 4049aa7fb2013494490b3e22574fc08c, type: 2}
   playerController: {fileID: 214301620}
 --- !u!4 &1077217097
 Transform:

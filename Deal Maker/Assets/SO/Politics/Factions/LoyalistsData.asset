@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   factionName: Loyalists
   factionID: 1
+  startingRelations:
+  - otherFaction: {fileID: 11400000, guid: 3c4278b8f0d94e14aa8ab988f94415dd, type: 2}
+    initialRelation: -50
